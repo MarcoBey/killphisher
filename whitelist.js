@@ -9,7 +9,9 @@ var redFlagSites = [
     { "templateName":"IDBI Bank","site": "IDBI", "logo": "assets/img/idbi-linux.png", "diagDist":217 , "enabled":true},
     { "templateName":"Dropbox","site": "Dropbox", "logo": "assets/img/db-logo.png", "diagDist":57 , "enabled":true},
     { "templateName":"Google 2017","site": "Google", "logo": "assets/img/google-logo.png", "diagDist":90 , "enabled":true},
-    { "templateName":"Google 2016","site": "Google", "logo": "assets/img/google-old.png", "diagDist":129 , "enabled":true}
+    { "templateName":"Google 2016","site": "Google", "logo": "assets/img/google-old.png", "diagDist":129 , "enabled":true},
+    { "templateName":"Google old","site": "Google", "logo": "assets/img/google-old.jpg", "diagDist":129 , "enabled":true},
+    { "templateName":"Google strip","site": "Google", "logo": "assets/img/google-strip.jpg", "diagDist":129 , "enabled":true}
 ];
 
 //Sites that are used for greenflag approach. Can be modified by a user
