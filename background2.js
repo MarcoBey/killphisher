@@ -339,9 +339,7 @@ if (details.reason === 'install') {
 function initWhitelist() {
     objWhitelist.getAll((data) => {
         if (data.length <= 0) {
-            getDefaultWhitelist().then(patternData => {
-                objWhitelist.putBatch(patternData, syncWhiteList);
-            });
+            objWhitelist.putBatch(defPatterns, syncWhiteList);
         }
     })
 }
@@ -351,6 +349,10 @@ function syncWhiteList(cb){
         var data1 = data.map((x) => {
             return {id: x.id, url: x.url, type: x.type, site: x.site, logo: x.logo, enabled: x.enabled}
         });
+        if (cb && typeof(cb) === 'function') {
+            cb(data1);
+            return;
+        }
 
         KPTemplates = data.filter((x) => {
             return x.logo !== undefined && x.enabled === true;
@@ -362,9 +364,6 @@ function syncWhiteList(cb){
         }).map((x) => {
             return {id: x.id, url: x.url, type: x.type, enabled: x.enabled};
         });
-        if (typeof(cb) === 'function') {
-            cb(data1);
-        }
         console.log("syncWhiteList called : ", KPWhiteList, KPTemplates);
     })
 }
